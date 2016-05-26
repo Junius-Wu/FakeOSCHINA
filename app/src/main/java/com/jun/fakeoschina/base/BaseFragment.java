@@ -2,6 +2,7 @@ package com.jun.fakeoschina.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,7 @@ import java.util.zip.Inflater;
  * fragment 基类
  * Created by jun on 16/5/26.
  */
-public abstract class BaseFragment extends android.support.v4.app.Fragment{
+public abstract class BaseFragment extends Fragment{
 
     private LayoutInflater mInflater;
 

@@ -26,11 +26,11 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         mDoubleClickExit = new DoubleClickExitHelper(this);
         mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.navigation_drawer);
-        View mainView = findViewById(R.id.drawer_layout);
-        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mNavigationDrawerFragment.setUp(mainView, drawerLayout);
-        mNavigationDrawerFragment.open();
+                .findFragmentById(R.id.navigation_drawer);//获得左侧fragment
+
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);//获得drawerLayout
+        mNavigationDrawerFragment.setUp(drawerLayout);//fragment 包含drawerLayout变量
+
     }
 
 
