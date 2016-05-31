@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
+
         mDoubleClickExit = new DoubleClickExitHelper(this);
         mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.navigation_drawer);//获得左侧fragment

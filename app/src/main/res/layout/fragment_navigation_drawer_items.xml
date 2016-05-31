@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/MenuItemLayoutStyle">
+
+        <TextView
+            android:id="@+id/menu_item_quests"
+            style="@style/MenuItemTextViewStyle"
+            android:text="技术问答" />
+    </LinearLayout>
+
+    <View style="@style/h_line">
+
+    </View>
+    <LinearLayout style="@style/MenuItemLayoutStyle">
+
+        <TextView
+            android:id="@+id/menu_item_opensoft"
+            style="@style/MenuItemTextViewStyle"
+            android:text="开源软件" />
+    </LinearLayout>
+    <View style="@style/h_line">
+
+    </View>
+    <LinearLayout style="@style/MenuItemLayoutStyle">
+
+        <TextView
+            android:id="@+id/menu_item_blog"
+            style="@style/MenuItemTextViewStyle"
+            android:text="博客区" />
+    </LinearLayout>
+    <View style="@style/h_line">
+
+    </View>
+    <LinearLayout style="@style/MenuItemLayoutStyle">
+
+        <TextView
+            android:id="@+id/menu_item_gitapp"
+            style="@style/MenuItemTextViewStyle"
+            android:text="github客户端" />
+
+    </LinearLayout>
+    <View style="@style/h_line">
+
+    </View>
+
+
+</LinearLayout>
