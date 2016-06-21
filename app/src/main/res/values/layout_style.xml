@@ -4,6 +4,6 @@
     <style name="h_line">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">1dip</item>
-        <item name="android:background">#444444</item>
+        <item name="android:background">#E7E7E7</item>
     </style>
 </resources>

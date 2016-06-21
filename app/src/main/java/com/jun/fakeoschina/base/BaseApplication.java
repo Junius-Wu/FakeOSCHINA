@@ -17,6 +17,9 @@ import android.widget.Toast;
 import com.jun.fakeoschina.R;
 
 /**
+ * Applocation基类
+ * 1. set get preferences的key value
+ * 2. showToast
  * Created by jun on 16/5/24.
  */
 public class BaseApplication extends Application {
@@ -117,14 +120,14 @@ public class BaseApplication extends Application {
         return getPreferences().getFloat(key, defValue);
     }
 
-    /**
-     * 取得字符串资源
-     * @param id
-     * @return
-     */
-    public static String string(int id) {
-        return _resources.getString(id);
-    }
+//    /**
+//     * 取得字符串资源 直接getApplication.getString 就可以 这个方法没有必要
+//     * @param id
+//     * @return
+//     */
+//    public static String string(int id) {
+//        return _resources.getString(id);
+//    }
 
     /**
      * 以某种格式取得字符串资源
