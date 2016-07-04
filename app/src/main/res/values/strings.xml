@@ -1,10 +1,18 @@
 <resources>
     <string name="app_name">FakeOSCHINA</string>
+
+    <!--maintab中的4个选项-->
     <string name="main_tab_name_news">新闻</string>
     <string name="main_tab_name_tweet">动弹</string>
     <string name="main_tab_name_quick">快速</string>
     <string name="main_tab_name_explore">发现</string>
     <string name="main_tab_name_my">我</string>
+
+    <!--maintab中新闻 上方滑动导航栏的4个选项-->
+    <string name="news_sliding_tab_name_news">资讯</string>
+    <string name="news_sliding_tab_name_news_week">热点</string>
+    <string name="news_sliding_tab_name_blog">博客</string>
+    <string name="news_sliding_tab_name_recommend_blog">推荐</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

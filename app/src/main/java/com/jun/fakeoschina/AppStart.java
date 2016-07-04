@@ -29,7 +29,7 @@ public class AppStart extends Activity {
         View view = View.inflate(this, R.layout.app_start, null);
         setContentView(view);
         AlphaAnimation aa = new AlphaAnimation(0.5f, 1.0f);
-        aa.setDuration(800);
+        aa.setDuration(400);
         aa.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {

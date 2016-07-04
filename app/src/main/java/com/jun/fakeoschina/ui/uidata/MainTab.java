@@ -1,14 +1,18 @@
 package com.jun.fakeoschina.ui.uidata;
 
+import com.jun.fakeoschina.AppStart;
 import com.jun.fakeoschina.R;
+import com.jun.fakeoschina.base.BaseViewPagerFragment;
 import com.jun.fakeoschina.ui.NullFragment;
+import com.jun.fakeoschina.viewpagerfragment.NewsViewPagerFragment;
+
 /**
  * 下菜单栏的显示数据，和点击时跳转的fragment类型
  */
 public enum MainTab {
 
 	NEWS(0, R.string.main_tab_name_news, R.drawable.alien,
-			NullFragment.class),
+			NewsViewPagerFragment.class),
 
 	TWEET(1, R.string.main_tab_name_tweet, R.drawable.angel,
 			NullFragment.class),

@@ -92,27 +92,27 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
         MainTab[] tabs = MainTab.values();
         final int size = tabs.length;
         for (int i = 0; i < size; i++) {
-            MainTab thisTab = tabs[i];//得到这个自定义的数据
-            TabHost.TabSpec tab = mTabHost.newTabSpec(getString(thisTab.getResName()));//真正要添加的tab
+            MainTab tabData = tabs[i];//得到这个自定义的数据
+            TabHost.TabSpec tabSpec = mTabHost.newTabSpec(getString(tabData.getResName()));//真正要添加的tab分页
 
-            //设置tab的indicator(内容) ->文字+图片 都放在textview中 可以自定义 从layout中获取
+            //设置tab的indicator(图标和文字) ->文字+图片 都放在textview中 可以自定义 从layout中获取
             View indicator = LayoutInflater.from(this).inflate(R.layout.tab_indicator, null);
             TextView textView = (TextView) indicator.findViewById(R.id.tab_indicator_textview);
-            textView.setText(thisTab.getResName());
-            Drawable drawable = getResources().getDrawable(thisTab.getResIcon());
+            textView.setText(tabData.getResName());
+            Drawable drawable = getResources().getDrawable(tabData.getResIcon());
             //必须设置图片尺寸 否则不显示-> 加上WithIntrinsicBounds 可以不设置
             //drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
             textView.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null);
-            tab.setIndicator(indicator);
+            tabSpec.setIndicator(indicator);
 
-            tab.setContent(new TabHost.TabContentFactory() {
+            tabSpec.setContent(new TabHost.TabContentFactory() {
                 @Override
                 public View createTabContent(String tag) {
                     return new View(MainActivity.this);//返回一个什么都没有的view 有什么用？？？
                 }
             });
 
-            mTabHost.addTab(tab, thisTab.getClz(), null);
+            mTabHost.addTab(tabSpec, tabData.getClz(), null);
             mTabHost.getTabWidget().getChildAt(i).setOnTouchListener(this);
         }
 
@@ -121,18 +121,16 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
 
     /**
      * 由下方菜单栏的currentTabTag， 找到现在显示的fragment
+     *
      * @return 现在显示的fragment（由下方的菜单栏进行切换）
      */
     private Fragment getCurrentFragment() {
         return getSupportFragmentManager()
                 .findFragmentByTag(mTabHost.getCurrentTabTag());
     }
+
     /**
      * 触摸底部菜单时
-     *
-     * @param v
-     * @param event
-     * @return
      */
     @Override
     public boolean onTouch(View v, MotionEvent event) {
@@ -145,8 +143,6 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
 
     /**
      * 切换fragment时
-     *
-     * @param tabId
      */
     @Override
     public void onTabChanged(String tabId) {
@@ -155,10 +151,6 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
 
     /**
      * 如果是按下了返回键 调用DoubleClickExitHelper中的同名方法来确定是否是第二次按下 如果是就退出程序
-     *
-     * @param keyCode
-     * @param event
-     * @return
      */
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -170,7 +162,9 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
         return super.onKeyDown(keyCode, event);
     }
 
-    /** 设备配置(横竖屏)改变时 */
+    /**
+     * 设备配置(横竖屏)改变时
+     */
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         mNavigationDrawerFragment.onConfigurationChanged(newConfig);
